@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APOD</title>
+</head>
+<body>
+    <h1>NASA Astronomy Picture of the Day</h1>
+    <h2>Today's APOD: {{ today }}</h2>
+    <img src="{{ apod['url'] }}" alt="Astronomy Picture of the Day" width="600">
+    <p>{{ apod['explanation'] }}</p>
+    {% if 'copyright' in apod %}
+        <p><strong>Copyright:</strong> {{ apod['copyright'] }}</p>
+    {% endif %}
+    <a href="{{ url_for('history') }}">Go to History Page</a>
+</body>
+</html>
